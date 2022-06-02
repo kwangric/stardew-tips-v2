@@ -8,21 +8,22 @@ const App = () => {
       <div>
         <nav>
           <Link className="nav-item" to="/"><p>Home</p></Link>
-          <Link className="nav-item" to="/robots">All Robots</Link>
-          <Link className="nav-item" to="/projects">All Projects</Link>
+          <Link className="nav-item" to="/crops">Crops</Link>
+          <Link className="nav-item" to="/villagers">Villagers</Link>
+          <Link className="nav-item" to="/fish">Fish</Link>
+          <Link className="nav-item" to="/bundles">Bundles</Link>
         </nav>
         <main>
           <h1>
             Welcome to Stardew Tips!
           </h1>
-          <Switch>
+          {/* <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/robots" component={AllRobots} />
-            <Route path="/robots/:robotId" component={SingleRobot} />
-            <Route exact path="/projects" component={AllProjects} />
-            <Route path="/projects/:projectId" component={SingleProject} />
-
-          </Switch>
+            <Route exact path="/crops" component={Crops} />
+            <Route exact path="/villagers" component={Villagers} />
+            <Route exact path="/fish" component={Fish} />
+            <Route exact path="/bundles" component={Bundles} />
+          </Switch> */}
         </main>
       </div>
     </Router>
