@@ -1,10 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React from 'react'
+import Typography from '@mui/material/Typography'
 
 const Home = () => {
   return (
-    <h1>hello world</h1>
-  );
-};
+    <div>
+      <Typography variant="h1">
+        Welcome to Stardew Tips
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Created by Richard Kwang
+      </Typography>
+    </div>
+  )
+}
 
 export default Home

@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Typography from '@mui/material/Typography'
 
 const BundlesInfo = () => {
   return (
-    <h1>Hello bundles!</h1>
+    <Typography sx={{paddingBottom: "2rem"}} variant="h2">Coming Soon!</Typography>
   )
 }
 
