@@ -31,43 +31,59 @@ const CropsInfo = () => {
   }, [])
 
   return (
-    <Box display="flex" justifyContent='center' alignItems='center' className='component-view'>
+    <>
+    {crops.length > 0 ? (
+      <Box
+      className="component-view"
+    >
       <Grid
         container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 4, sm: 8, md: 12 }}
+        spacing={2}
         direction="row"
         justifyContent="center"
         alignItems="flex-start"
-        align='center'
-        flexWrap='wrap'
-        gap='10px'
+        align="center"
+        flexWrap="wrap"
+        columnGap="50px"
+        rowGap="20px"
       >
         {crops.map((crop) => {
           return (
-            <Grid key={crop.id} item xs={6} sm={4} md={3}>
+            <Grid key={crop.id} item>
               <Card
                 className="card"
+                variant="outlined"
                 sx={{
-                  minWidth: 275,
-                  height: 375,
+                  width: 275,
+                  height: 370,
                   display: 'flex',
                   flexDirection: 'column',
                   alignContent: 'flex-start',
-                  justifyContent: 'flex-start'
+                  justifyContent: 'space-between',
                 }}
+                style={{ backgroundColor: '#fcfccc', borderRadius: '25px' }}
               >
-                <Box className="card-title">
-                <Typography variant="h5" component="div">
-                        {crop.name}
-                      </Typography>
-                      <Typography color="text.secondary">
-                        {crop.type ? crop.type[0].toUpperCase() + crop.type.slice(1,crop.type.length): null}
-                      </Typography>
-                      <Typography variant="body2">
-                        {crop.season.map(season => season[0].toUpperCase() + season.slice(1,season.length)).join(', ')}
-                        <br />
-                      </Typography>
+              <Box>
+              <Box className="card-title">
+                  <Typography variant="h5" component="div">
+                    {crop.name}
+                  </Typography>
+                  <Typography color="text.secondary">
+                    {crop.type
+                      ? crop.type[0].toUpperCase() +
+                        crop.type.slice(1, crop.type.length)
+                      : null}
+                  </Typography>
+                  <Typography variant="body2">
+                    {crop.season
+                      .map(
+                        (season) =>
+                          season[0].toUpperCase() +
+                          season.slice(1, season.length)
+                      )
+                      .join(', ')}
+                    <br />
+                  </Typography>
                 </Box>
                 <Box
                   sx={{
@@ -78,23 +94,48 @@ const CropsInfo = () => {
                 >
                   <Box className="card-information">
                     <CardContent>
-
                       <Typography variant="body3">
                         Cost
                         <br />
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {crop.price ? `${crop.price} (${crop.shop})` : "N/A"}
+                        {crop.price ? `${crop.price} (${crop.shop})` : 'N/A'}
                         <br />
                       </Typography>
                       <Typography variant="body3">
                         Grow Time
                         <br />
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {crop.growTime} days
-                        <br />
-                      </Typography>
+                      {crop.regrowthTime ? (
+                        <>
+                          <Typography variant="body2" color="text.secondary">
+                            {crop.growTime} days
+                            <br />
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {crop.regrowthTime} days (Regrowth)
+                            <br />
+                          </Typography>
+                        </>
+                      ) : crop.irrigatedGrowTime ? (
+                        <>
+                          <Typography variant="body2" color="text.secondary">
+                            {crop.growTime} days
+                            <br />
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {crop.irrigatedGrowTime} days (Irrigated)
+                            <br />
+                          </Typography>
+                        </>
+                      ) :
+                      (
+                        <Typography variant="body2" color="text.secondary">
+                          {crop.growTime} days
+                          <br />
+                        </Typography>
+                      )}
+
                       <Typography variant="body3">
                         Sell Price
                         <br />
@@ -108,7 +149,10 @@ const CropsInfo = () => {
                       </Typography>
                     </CardContent>
                   </Box>
-                  <Box sx={{ display: 'flex', alignContent: 'center' }} className="card-image">
+                  <Box
+                    sx={{ display: 'flex', alignContent: 'center' }}
+                    className="card-image"
+                  >
                     <CardMedia
                       component="img"
                       sx={{ width: 75, height: 75 }}
@@ -117,6 +161,8 @@ const CropsInfo = () => {
                     />
                   </Box>
                 </Box>
+              </Box>
+
                 {crop.note ? (
                   <Typography variant="subtitle2">{crop.note}</Typography>
                 ) : (
@@ -127,7 +173,11 @@ const CropsInfo = () => {
           )
         })}
       </Grid>
-    </Box>
+    </Box>) : (
+        <h1>Loading</h1>
+      )}
+    </>
+
   )
 }
 

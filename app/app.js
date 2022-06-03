@@ -3,6 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home'
 import CropsInfo from './components/CropsInfo'
+import VillagersInfo from './components/VillagersInfo'
+import FishInfo from './components/FishInfo'
+import BundlesInfo from './components/BundlesInfo'
 
 const App = () => {
   return (
@@ -22,9 +25,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/crops" element={<CropsInfo />} />
-            {/* <Route exact path="/villagers" component={Villagers} />
-            <Route exact path="/fish" component={Fish} />
-            <Route exact path="/bundles" component={Bundles} /> */}
+            <Route path="/villagers" element={<VillagersInfo/>} />
+            <Route path="/fish" element={<FishInfo/>} />
+            <Route path="/bundles" element={<BundlesInfo/>} />
           </Routes>
         </main>
       </div>

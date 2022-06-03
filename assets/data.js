@@ -1161,7 +1161,7 @@ const fishingPoleFish = [
   {
     id: 4,
     name: 'Bream',
-    location: ['River (Town & Forest'],
+    location: ['River (Town & Forest)'],
     season: ['spring', 'summer', 'fall', 'winter'],
     time: ['6pm - 2am'],
     weather: ['Sunny', 'Windy', 'Rain'],
@@ -1761,7 +1761,7 @@ const fishingPoleFish = [
       },
     ],
     notes: null,
-    imageUrl: 'Void Salmon',
+    imageUrl: 'void-salmon',
   },
   {
     id: 44,
@@ -2096,6 +2096,8 @@ const crabPotFish = [
   },
 ];
 
+const fish = {fishingPoleFish, nightMarketFish, legendaryFish, legendaryFish2, crabPotFish}
+
 // Fish Functions
 const getFishBySeason = (season, fish) => {
   if (Array.isArray(season)) {
@@ -2116,5 +2118,6 @@ module.exports = {
   legendaryFish,
   legendaryFish2,
   crabPotFish,
+  fish,
   getFishBySeason,
 };

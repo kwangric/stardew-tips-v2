@@ -2,9 +2,9 @@ const router = require('express').Router()
 
 router.use('/crops', require('./crops'))
 
-// router.use('/villagers', require('./villagers'))
+router.use('/villagers', require('./villagers'))
 
-// router.use('/fish', require('./fish'))
+router.use('/fish', require('./fish'))
 
 // router.use('/bundles', require('./bundles'))
 
