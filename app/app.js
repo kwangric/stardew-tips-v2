@@ -25,28 +25,28 @@ const App = () => {
               <Link className="nav-item" to="/">
                 <MenuItem>
                   <Typography textAlign="center">
-                    <p>Home</p>
+                    Home
                   </Typography>
                 </MenuItem>
               </Link>
               <Link className="nav-item" to="/crops">
                 <MenuItem>
                   <Typography textAlign="center">
-                    <p>Crops</p>
+                    Crops
                   </Typography>
                 </MenuItem>
               </Link>
               <Link className="nav-item" to="/villagers">
                 <MenuItem>
                   <Typography textAlign="center">
-                    <p>Villagers</p>
+                    Villagers
                   </Typography>
                 </MenuItem>
               </Link>
               <Link className="nav-item" to="/fish">
                 <MenuItem key="Home">
                   <Typography textAlign="center">
-                    <p>Fish</p>
+                    Fish
                   </Typography>
                 </MenuItem>
               </Link>

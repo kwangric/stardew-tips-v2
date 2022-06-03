@@ -125,9 +125,9 @@ const VillagersInfo = () => {
                               justifyContent="center"
                               gap="10px"
                             >
-                              {villager.lovedGifts.map((gift) => {
+                              {villager.lovedGifts.map((gift, index) => {
                                 return (
-                                  <Tooltip title={gift.name}>
+                                  <Tooltip key={index} title={gift.name}>
                                     <CardMedia
                                       component="img"
                                       sx={{ width: 50, height: 50 }}

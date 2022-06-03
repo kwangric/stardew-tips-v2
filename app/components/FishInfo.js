@@ -104,9 +104,10 @@ const FishInfo = () => {
                             margin: '4% 0',
                           }}
                         >
-                          {fish.season.map((season) => {
+                          {fish.season.map((season, index) => {
                             return (
                               <Tooltip
+                                key={index}
                                 title={
                                   season[0].toUpperCase() +
                                   season.slice(1, season.length)
@@ -130,9 +131,9 @@ const FishInfo = () => {
                           {fish.location.join(', ')}
                           <br />
                         </Typography>
-                        {fish.time.map((time) => {
+                        {fish.time.map((time, index) => {
                           return (
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography key={index} variant="body2" color="text.secondary">
                               {time}
                               <br />
                             </Typography>
@@ -189,9 +190,9 @@ const FishInfo = () => {
                           }}
                         >
                           {fish.bundle ? (
-                            fish.bundle.map((bundle) => {
+                            fish.bundle.map((bundle, index) => {
                               return (
-                                <Tooltip title={bundle.name}>
+                                <Tooltip key={index} title={bundle.name}>
                                   <CardMedia
                                     component="img"
                                     sx={{ width: 25, height: 25 }}
@@ -365,9 +366,10 @@ const FishInfo = () => {
                             margin: '4% 0',
                           }}
                         >
-                          {fish.season.map((season) => {
+                          {fish.season.map((season, index) => {
                             return (
                               <Tooltip
+                                key={index}
                                 title={
                                   season[0].toUpperCase() +
                                   season.slice(1, season.length)
@@ -391,9 +393,9 @@ const FishInfo = () => {
                           {fish.location.join(', ')}
                           <br />
                         </Typography>
-                        {fish.time.map((time) => {
+                        {fish.time.map((time, index) => {
                           return (
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography key={index} variant="body2" color="text.secondary">
                               {time}
                               <br />
                             </Typography>
@@ -502,9 +504,10 @@ const FishInfo = () => {
                             margin: '4% 0',
                           }}
                         >
-                          {fish.season.map((season) => {
+                          {fish.season.map((season, index) => {
                             return (
                               <Tooltip
+                                key={index}
                                 title={
                                   season[0].toUpperCase() +
                                   season.slice(1, season.length)
@@ -528,9 +531,9 @@ const FishInfo = () => {
                           {fish.location.join(', ')}
                           <br />
                         </Typography>
-                        {fish.time.map((time) => {
+                        {fish.time.map((time, index) => {
                           return (
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography key={index} variant="body2" color="text.secondary">
                               {time}
                               <br />
                             </Typography>
@@ -635,9 +638,9 @@ const FishInfo = () => {
                           {fish.location.join(', ')}
                           <br />
                         </Typography>
-                        {fish.time.map((time) => {
+                        {fish.time.map((time, index) => {
                           return (
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography key={index} variant="body2" color="text.secondary">
                               {time}
                               <br />
                             </Typography>

@@ -83,9 +83,10 @@ const CropsInfo = () => {
                               margin: '4% 0',
                             }}
                           >
-                            {crop.season.map((season) => {
+                            {crop.season.map((season, index) => {
                               return (
                                 <Tooltip
+                                  key={index}
                                   title={
                                     season[0].toUpperCase() +
                                     season.slice(1, season.length)
