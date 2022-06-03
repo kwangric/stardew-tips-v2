@@ -473,7 +473,7 @@ const crops = [
     sellPrice: 75,
     description: 'These tart red berries are a traditional winter food.',
     note: '2 cranberries per harvest, with 10% chance for more cranberries.',
-    imageUrl: 'bok-choy',
+    imageUrl: 'cranberries',
   },
   {
     id: 31,
@@ -489,7 +489,7 @@ const crops = [
     description:
       'A rich and wholesome relative of the tomato. Delicious fried or stewed.',
     note: '0.2% chance to produce extra eggplant per harvest.',
-    imageUrl: 'bok-choy',
+    imageUrl: 'eggplant',
   },
   {
     id: 32,
