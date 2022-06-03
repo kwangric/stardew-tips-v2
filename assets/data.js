@@ -124,7 +124,7 @@ const crops = [
     sellPrice: 80,
     description: 'A widely cultivated tuber.',
     note: '25% chance to produce extra potato per harvest.',
-    imageUrl: 'parsnip',
+    imageUrl: 'potato',
   },
   {
     id: 9,
@@ -154,7 +154,7 @@ const crops = [
     regrowthTime: 4,
     sellPrice: 120,
     description: 'A sweet, juicy favorite with an appealing red color.',
-    note: '2% chance to produce extra potato per harvest.',
+    note: '2% chance to produce extra strawberry per harvest.',
     imageUrl: 'strawberry',
   },
   {
@@ -868,7 +868,7 @@ const villagers = [
     birthday: 'Winter 1',
     lovedGifts: [
       { name: 'Diamond', imageUrl: 'diamond' },
-      { name: 'Iridium', imageUrl: 'iridium' },
+      { name: 'Iridium Bar', imageUrl: 'iridium-bar' },
       { name: 'Pumpkin', imageUrl: 'pumpkin' },
       { name: 'Void Egg', imageUrl: 'void-egg' },
       { name: 'Void Mayonnaise', imageUrl: 'void-mayonnaise' },
@@ -1773,8 +1773,8 @@ const fishingPoleFish = [
     sellPrice: 105,
     bundle: [
       {
-        name: 'Night Fish Bundle',
-        imageUrl: 'night-fish-bundle',
+        name: 'Night Fishing Bundle',
+        imageUrl: 'night-fishing-bundle',
       },
       {
         name: 'Quality Fish Bundle',

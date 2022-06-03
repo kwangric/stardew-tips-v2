@@ -55,7 +55,7 @@ const CropsInfo = () => {
                 variant="outlined"
                 sx={{
                   width: 275,
-                  height: 370,
+                  height: 360,
                   display: 'flex',
                   flexDirection: 'column',
                   alignContent: 'flex-start',
@@ -164,7 +164,7 @@ const CropsInfo = () => {
               </Box>
 
                 {crop.note ? (
-                  <Typography variant="subtitle2">{crop.note}</Typography>
+                  <Typography sx={{ fontSize: '0.75rem' }} variant="subtitle2">{crop.note}</Typography>
                 ) : (
                   <></>
                 )}

@@ -6,6 +6,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Grid from '@mui/material/Grid'
+import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import axios from 'axios'
 
@@ -54,7 +55,7 @@ const FishInfo = () => {
                     variant="outlined"
                     sx={{
                       width: 275,
-                      height: 300,
+                      height: 340,
                       display: 'flex',
                       flexDirection: 'column',
                       alignContent: 'flex-start',
@@ -91,56 +92,79 @@ const FishInfo = () => {
                         )
                       })}
                     </Box>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Box className="card-information">
-                        <CardContent>
-                          <Typography variant="body3">
-                            Weather
-                            <br />
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {fish.weather.length === 3
-                              ? 'Any'
-                              : fish.weather.join(', ')}
-                            <br />
-                          </Typography>
-                          <Typography variant="body3">
-                            Sell Price
-                            <br />
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            Normal: {fish.sellPrice}g <br />
-                            Silver: {Math.floor(fish.sellPrice * 1.25)}g <br />
-                            Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                            Iridium: {Math.floor(fish.sellPrice * 2)}g
-                            <br />
-                          </Typography>
-                        </CardContent>
+                    <Box>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Box className="card-information">
+                          <CardContent>
+                            <Typography variant="body3">
+                              Weather
+                              <br />
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              {fish.weather.length === 3
+                                ? 'Any'
+                                : fish.weather.join(', ')}
+                              <br />
+                            </Typography>
+                            <Typography variant="body3">
+                              Sell Price
+                              <br />
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              Normal: {fish.sellPrice}g <br />
+                              Silver: {Math.floor(fish.sellPrice * 1.25)}g{' '}
+                              <br />
+                              Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
+                              Iridium: {Math.floor(fish.sellPrice * 2)}g
+                              <br />
+                            </Typography>
+                          </CardContent>
+                        </Box>
+                        <Box
+                          sx={{ display: 'flex', alignContent: 'center' }}
+                          className="card-image"
+                        >
+                          <CardMedia
+                            component="img"
+                            sx={{ width: 75, height: 75 }}
+                            image={`/images/fish/${fish.imageUrl}.png`}
+                            alt={fish.imageUrl}
+                          />
+                        </Box>
                       </Box>
                       <Box
-                        sx={{ display: 'flex', alignContent: 'center' }}
-                        className="card-image"
+                        sx={{
+                          display: 'flex',
+                          alignContent: 'center',
+                          justifyContent: 'center',
+                          gap: '20px',
+                          height: '30px',
+                        }}
                       >
-                        <CardMedia
-                          component="img"
-                          sx={{ width: 75, height: 75 }}
-                          image={`/images/fish/${fish.imageUrl}.png`}
-                          alt={fish.imageUrl}
-                        />
+                        {fish.bundle ? (
+                          fish.bundle.map((bundle) => {
+                            return (
+                              <Tooltip title={bundle.name}>
+                                <CardMedia
+                                  component="img"
+                                  sx={{ width: 25, height: 25 }}
+                                  image={`/images/icons/bundles/${bundle.imageUrl}.png`}
+                                  alt={bundle.imageUrl}
+                                />
+                              </Tooltip>
+                            )
+                          })
+                        ) : (
+                          <></>
+                        )}
                       </Box>
                     </Box>
-
-                    {fish.note ? (
-                      <Typography variant="subtitle2">{fish.notes}</Typography>
-                    ) : (
-                      <></>
-                    )}
                   </Card>
                 </Grid>
               )
@@ -148,7 +172,11 @@ const FishInfo = () => {
           </Grid>
           {/* Night Market Fish */}
           <h2>Night Market Fish</h2>
-          <p>These fish are caught in the submarine ride at the Night Market during Winter 15-17. Alternatively, they can be caught using magic bait in the South-western corner of the beach</p>
+          <p>
+            These fish are caught in the submarine ride at the Night Market
+            during Winter 15-17. Alternatively, they can be caught using magic
+            bait in the south-western corner of the beach
+          </p>
           <Grid
             container
             spacing={2}
@@ -168,7 +196,7 @@ const FishInfo = () => {
                     variant="outlined"
                     sx={{
                       width: 275,
-                      height: 300,
+                      height: 165,
                       display: 'flex',
                       flexDirection: 'column',
                       alignContent: 'flex-start',
@@ -180,30 +208,6 @@ const FishInfo = () => {
                       <Typography variant="h5" component="div">
                         {fish.name}
                       </Typography>
-                      <Typography variant="body2">
-                        {fish.season.length === 4
-                          ? 'All Year'
-                          : fish.season
-                              .map(
-                                (season) =>
-                                  season[0].toUpperCase() +
-                                  season.slice(1, season.length)
-                              )
-                              .join(', ')}
-                        <br />
-                      </Typography>
-                      <Typography variant="body2">
-                        {fish.location.join(', ')}
-                        <br />
-                      </Typography>
-                      {fish.time.map((time) => {
-                        return (
-                          <Typography variant="body2" color="text.secondary">
-                            {time}
-                            <br />
-                          </Typography>
-                        )
-                      })}
                     </Box>
                     <Box
                       sx={{
@@ -214,16 +218,6 @@ const FishInfo = () => {
                     >
                       <Box className="card-information">
                         <CardContent>
-                          <Typography variant="body3">
-                            Weather
-                            <br />
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {fish.weather.length === 3
-                              ? 'Any'
-                              : fish.weather.join(', ')}
-                            <br />
-                          </Typography>
                           <Typography variant="body3">
                             Sell Price
                             <br />
@@ -249,12 +243,6 @@ const FishInfo = () => {
                         />
                       </Box>
                     </Box>
-
-                    {fish.notes ? (
-                      <Typography variant="subtitle2">{fish.notes}</Typography>
-                    ) : (
-                      <></>
-                    )}
                   </Card>
                 </Grid>
               )
@@ -365,7 +353,12 @@ const FishInfo = () => {
                     </Box>
 
                     {fish.notes ? (
-                      <Typography variant="subtitle2">{fish.notes}</Typography>
+                      <Typography
+                        sx={{ fontSize: '0.75rem' }}
+                        variant="subtitle2"
+                      >
+                        {fish.notes}
+                      </Typography>
                     ) : (
                       <></>
                     )}
@@ -376,7 +369,10 @@ const FishInfo = () => {
           </Grid>
           {/* Legendary Fish 2 */}
           <h2>Legendary Fish 2</h2>
-          <p>These fish can only be caught during the Extended Family Qi's Challenge.</p>
+          <p>
+            These fish can only be caught during the Extended Family Qi's
+            Challenge.
+          </p>
           <Grid
             container
             spacing={2}
@@ -479,10 +475,103 @@ const FishInfo = () => {
                     </Box>
 
                     {fish.notes ? (
-                      <Typography variant="subtitle2">{fish.notes}</Typography>
+                      <Typography
+                        sx={{ fontSize: '0.75rem' }}
+                        variant="subtitle2"
+                      >
+                        {fish.notes}
+                      </Typography>
                     ) : (
                       <></>
                     )}
+                  </Card>
+                </Grid>
+              )
+            })}
+          </Grid>
+          {/* Crab Pot Fish */}
+          <h2>Crab Pot Fish</h2>
+          <p>
+          These fish are caught using a baited crab pot or foraged on the beach. They are avaliable all year.
+          </p>
+          <Grid
+            container
+            spacing={2}
+            direction="row"
+            justifyContent="center"
+            alignItems="flex-start"
+            align="center"
+            flexWrap="wrap"
+            columnGap="50px"
+            rowGap="20px"
+          >
+            {fish.crabPotFish.map((fish) => {
+              return (
+                <Grid key={fish.id} item>
+                  <Card
+                    className="card"
+                    variant="outlined"
+                    sx={{
+                      width: 275,
+                      height: 200,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignContent: 'flex-start',
+                      justifyContent: 'flex-start',
+                    }}
+                    style={{ backgroundColor: '#fcfccc', borderRadius: '25px' }}
+                  >
+                    <Box className="card-title">
+                      <Typography variant="h5" component="div">
+                        {fish.name}
+                      </Typography>
+                      <Typography variant="body2">
+                        {fish.location.join(', ')}
+                        <br />
+                      </Typography>
+                      {fish.time.map((time) => {
+                        return (
+                          <Typography variant="body2" color="text.secondary">
+                            {time}
+                            <br />
+                          </Typography>
+                        )
+                      })}
+                    </Box>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <Box className="card-information">
+                        <CardContent>
+                          <Typography variant="body3">
+                            Sell Price
+                            <br />
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Normal: {fish.sellPrice}g <br />
+                            Silver: {Math.floor(fish.sellPrice * 1.25)}g <br />
+                            Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
+                            Iridium: {Math.floor(fish.sellPrice * 2)}g
+                            <br />
+                          </Typography>
+                        </CardContent>
+                      </Box>
+                      <Box
+                        sx={{ display: 'flex', alignContent: 'center' }}
+                        className="card-image"
+                      >
+                        <CardMedia
+                          component="img"
+                          sx={{ width: 75, height: 75 }}
+                          image={`/images/fish/${fish.imageUrl}.png`}
+                          alt={fish.imageUrl}
+                        />
+                      </Box>
+                    </Box>
                   </Card>
                 </Grid>
               )
