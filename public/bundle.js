@@ -19949,7 +19949,7 @@ var FishInfo = function FishInfo() {
         top: 10,
         left: 0
       },
-      image: "/images/icons/".concat(fish.weather[0], ".png"),
+      image: "/images/icons/".concat(fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1, fish.weather[0].length), ".png"),
       alt: fish.weather[0]
     })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "h5",
@@ -20150,7 +20150,7 @@ var FishInfo = function FishInfo() {
         top: 10,
         left: 0
       },
-      image: "/images/icons/".concat(fish.weather[0], ".png"),
+      image: "/images/icons/".concat(fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1, fish.weather[0].length), ".png"),
       alt: fish.weather[0]
     })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "h5",

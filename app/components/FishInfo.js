@@ -86,7 +86,7 @@ const FishInfo = () => {
                                 top: 10,
                                 left: 0,
                               }}
-                              image={`/images/icons/${fish.weather[0]}.png`}
+                              image={`/images/icons/${fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1,fish.weather[0].length)}.png`}
                               alt={fish.weather[0]}
                             />
                           </Tooltip>
@@ -348,7 +348,7 @@ const FishInfo = () => {
                                 top: 10,
                                 left: 0,
                               }}
-                              image={`/images/icons/${fish.weather[0]}.png`}
+                              image={`/images/icons/${fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1,fish.weather[0].length)}.png`}
                               alt={fish.weather[0]}
                             />
                           </Tooltip>
