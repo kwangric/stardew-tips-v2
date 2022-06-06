@@ -6,6 +6,10 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
+import Container from '@mui/material/Container'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
@@ -15,6 +19,21 @@ import axios from 'axios'
 
 const FishInfo = () => {
   const [fish, setFish] = useState({})
+  const [seasons, setSeasons] = useState(['spring', 'summer', 'fall', 'winter'])
+  const [displayedFish, setDisplayedFish] = useState({})
+
+  const getFishBySeason = (season, fish) => {
+    let newFish = {}
+    for (let key in fish) {
+      if (Array.isArray(season)) {
+        newFish[key] = fish[key].filter((fish) => {
+          const combinedSeasons = new Set(fish.season.concat(season));
+          return combinedSeasons.size != fish.season.length + season.length;
+        });
+      }
+    }
+    return newFish
+  };
 
   const getFish = async () => {
     try {
@@ -25,10 +44,24 @@ const FishInfo = () => {
     }
   }
 
+  const changeFish = (season) => {
+    let newSeasons = seasons
+    if (seasons.includes(season)) {
+      newSeasons.splice(seasons.indexOf(season), 1)
+      setSeasons(newSeasons)
+      setDisplayedFish(getFishBySeason(seasons, fish))
+    } else {
+      newSeasons.push(season)
+      setSeasons(newSeasons)
+      setDisplayedFish(getFishBySeason(seasons, fish))
+    }
+  }
+
   useEffect(() => {
     const gotFish = async () => {
       const newFish = await getFish()
       setFish(newFish)
+      setDisplayedFish(getFishBySeason(seasons, newFish))
     }
     gotFish()
   }, [])
@@ -39,6 +72,28 @@ const FishInfo = () => {
         <>
           <Typography variant="h2">Fish</Typography>
           <Box className="component-view">
+          <Container className="filters" display="flex" align="center">
+            <Box sx={{ height: '150px', width: '100px' }} >
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="spring" onChange={(event)=> {changeFish(event.target.value)}}/>}
+                    label="Spring"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="summer" onChange={(event)=> {changeFish(event.target.value)}}/>}
+                    label="Summer"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="fall" onChange={(event)=> {changeFish(event.target.value)}}/>}
+                    label="Fall"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="winter" onChange={(event)=> {changeFish(event.target.value)}}/>}
+                    label="Winter"
+                  />
+                </FormGroup>
+              </Box>
+            </Container>
             {/* Fishing Pole Fish */}
             <Box className="section-title">
               <Typography variant="h4">Fishing Pole Fish</Typography>
@@ -54,7 +109,7 @@ const FishInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {fish.fishingPoleFish.map((fish) => {
+              {displayedFish.fishingPoleFish.map((fish) => {
                 return (
                   <Grid key={fish.id} item>
                     <Card
@@ -233,7 +288,7 @@ const FishInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {fish.nightMarketFish.map((fish) => {
+              {displayedFish.nightMarketFish.map((fish) => {
                 return (
                   <Grid key={fish.id} item>
                     <Card
@@ -316,7 +371,7 @@ const FishInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {fish.legendaryFish.map((fish) => {
+              {displayedFish.legendaryFish.map((fish) => {
                 return (
                   <Grid key={fish.id} item>
                     <Card
@@ -473,7 +528,7 @@ const FishInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {fish.legendaryFish2.map((fish) => {
+              {displayedFish.legendaryFish2.map((fish) => {
                 return (
                   <Grid key={fish.id} item>
                     <Card
@@ -611,7 +666,7 @@ const FishInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {fish.crabPotFish.map((fish) => {
+              {displayedFish.crabPotFish.map((fish) => {
                 return (
                   <Grid key={fish.id} item>
                     <Card
@@ -688,7 +743,7 @@ const FishInfo = () => {
               })}
             </Grid>
           </Box>
-          <Box sx={{ marginTop: '2rem' }}>
+          {Object.keys(displayedFish).length > 0 ? (<Box sx={{ marginTop: '2rem' }}>
             <BottomNavigation
               showLabels
               onChange={() => {
@@ -700,7 +755,7 @@ const FishInfo = () => {
             >
               <BottomNavigationAction label="Back to top" />
             </BottomNavigation>
-          </Box>
+          </Box>) : <h2>:(</h2>}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />

@@ -59,9 +59,8 @@ const CropsInfo = () => {
     const gotCrops = async () => {
       const newCrops = await getCrops()
       setCrops(newCrops)
-      setDisplayedCrops(getCropsBySeason(seasons, newCrops))
+      setDisplayedCrops(newCrops)
     }
-    console.log('initial crops')
     gotCrops()
   }, [])
 
