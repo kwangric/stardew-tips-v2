@@ -6,6 +6,10 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
+import Container from '@mui/material/Container'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
@@ -15,6 +19,19 @@ import axios from 'axios'
 
 const CropsInfo = () => {
   const [crops, setCrops] = useState([])
+  const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
+  const [displayedCrops, setDisplayedCrops] = useState([])
+
+
+  const getCropsBySeason = (season, crops) => {
+    if (Array.isArray(season)) {
+      return crops.filter((crop) => {
+        const combinedSeasons = new Set(crop.season.concat(season));
+        return combinedSeasons.size != crop.season.length + season.length;
+      });
+    }
+    return crops.filter((crop) => crop.season.includes(season));
+  };
 
   const getCrops = async () => {
     try {
@@ -25,12 +42,26 @@ const CropsInfo = () => {
     }
   }
 
+  const changeCrops = (season) => {
+    let newSeasons = seasons
+    if (seasons.includes(season)) {
+      newSeasons.splice(seasons.indexOf(season), 1)
+      setSeasons(newSeasons)
+      setDisplayedCrops(getCropsBySeason(seasons, crops))
+    } else {
+      newSeasons.push(season)
+      setSeasons(newSeasons)
+      setDisplayedCrops(getCropsBySeason(seasons, crops))
+    }
+  }
+
   useEffect(() => {
     const gotCrops = async () => {
       const newCrops = await getCrops()
       setCrops(newCrops)
+      setDisplayedCrops(getCropsBySeason(seasons, newCrops))
     }
-
+    console.log('initial crops')
     gotCrops()
   }, [])
 
@@ -38,8 +69,28 @@ const CropsInfo = () => {
     <>
       {crops.length > 0 ? (
         <>
-          <Typography sx={{paddingBottom: "2rem"}} variant="h2">Crops</Typography>
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">
+            Crops
+          </Typography>
           <Box className="component-view">
+            <Container className="filters" display="flex" align="center">
+            <Box sx={{ height: '150px', width: '100px' }} >
+                <FormGroup>
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="spring" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    label="Spring"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="summer" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    label="Summer"
+                  />
+                  <FormControlLabel
+                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="fall" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    label="Fall"
+                  />
+                </FormGroup>
+              </Box>
+            </Container>
             <Grid
               container
               spacing={2}
@@ -51,7 +102,7 @@ const CropsInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {crops.map((crop) => {
+              {displayedCrops.map((crop) => {
                 return (
                   <Grid key={crop.id} item>
                     <Card
@@ -121,22 +172,35 @@ const CropsInfo = () => {
                                 <br />
                               </Typography>
                               {crop.jojaPrice ? (
-                              <>
-                              <Typography
-                                variant="body2"
-                                color="text.secondary"
-                              >{crop.price}g ({crop.shop})</Typography>
-                              <Typography
-                                variant="body2"
-                                color="text.secondary"
-                              >{crop.jojaPrice}g (JojaMart)</Typography>
-                              </>) : crop.price ? (<Typography
-                                variant="body2"
-                                color="text.secondary"
-                              >{crop.price}g ({crop.shop})</Typography>) : <Typography
-                                variant="body2"
-                                color="text.secondary"
-                              >N/A</Typography>}
+                                <>
+                                  <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                  >
+                                    {crop.price}g ({crop.shop})
+                                  </Typography>
+                                  <Typography
+                                    variant="body2"
+                                    color="text.secondary"
+                                  >
+                                    {crop.jojaPrice}g (JojaMart)
+                                  </Typography>
+                                </>
+                              ) : crop.price ? (
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {crop.price}g ({crop.shop})
+                                </Typography>
+                              ) : (
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  N/A
+                                </Typography>
+                              )}
 
                               <Typography variant="body3">
                                 Grow Time
@@ -234,19 +298,19 @@ const CropsInfo = () => {
               })}
             </Grid>
           </Box>
-          <Box sx={{ marginTop: '2rem' }}>
+          {displayedCrops.length > 0 ? (<Box sx={{ marginTop: '2rem' }}>
             <BottomNavigation
               showLabels
-              onChange={() =>{
+              onChange={() => {
                 window.scrollTo({
                   top: 0,
-                  behavior: 'smooth'
-                });
+                  behavior: 'smooth',
+                })
               }}
             >
               <BottomNavigationAction label="Back to top" />
             </BottomNavigation>
-          </Box>
+          </Box>) : <h2>:(</h2>}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />

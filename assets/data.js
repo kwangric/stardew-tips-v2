@@ -618,7 +618,7 @@ const crops = [
 ];
 
 // Crop Functions
-const getCropsBySeason = (season) => {
+const getCropsBySeason = (season, crops) => {
   if (Array.isArray(season)) {
     return crops.filter((crop) => {
       const combinedSeasons = new Set(crop.season.concat(season));
