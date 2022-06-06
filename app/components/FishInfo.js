@@ -70,9 +70,9 @@ const FishInfo = () => {
     <>
       {Object.keys(fish).length > 0 ? (
         <>
-          <Typography variant="h2">Fish</Typography>
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">Fish</Typography>
           <Box className="component-view">
-          <Container className="filters" display="flex" align="center">
+          <Container className="filters" display="flex" align="center" direction="row">
             <Box sx={{ height: '150px', width: '100px' }} >
                 <FormGroup>
                   <FormControlLabel
@@ -94,6 +94,7 @@ const FishInfo = () => {
                 </FormGroup>
               </Box>
             </Container>
+
             {/* Fishing Pole Fish */}
             <Box className="section-title">
               <Typography variant="h4">Fishing Pole Fish</Typography>
@@ -652,7 +653,7 @@ const FishInfo = () => {
               <br />
               <Typography variant="body1">
                 These fish are caught using a baited crab pot or foraged on the
-                beach. They are avaliable all year.
+                beach, they can all be donated to the Crab Pot Bundle. They are avaliable all year.
               </Typography>
             </Box>
             <Grid

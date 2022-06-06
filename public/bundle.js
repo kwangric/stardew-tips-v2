@@ -21598,13 +21598,17 @@ var FishInfo = function FishInfo() {
     gotFish();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, Object.keys(fish).length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    sx: {
+      paddingBottom: '2rem'
+    },
     variant: "h2"
   }, "Fish"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "component-view"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "filters",
     display: "flex",
-    align: "center"
+    align: "center",
+    direction: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     sx: {
       height: '150px',
@@ -22078,7 +22082,7 @@ var FishInfo = function FishInfo() {
     variant: "h4"
   }, "Crab Pot Fish"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "body1"
-  }, "These fish are caught using a baited crab pot or foraged on the beach. They are avaliable all year.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, "These fish are caught using a baited crab pot or foraged on the beach, they can all be donated to the Crab Pot Bundle. They are avaliable all year.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_8__["default"], {
     container: true,
     spacing: 2,
     direction: "row",
@@ -22193,10 +22197,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var Home = function Home() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    sx: {
+      paddingBottom: '2rem'
+    },
     variant: "h1"
   }, "Welcome to Stardew Tips"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    sx: {
+      padding: '1rem'
+    },
     variant: "body3"
   }, "Created by Richard Kwang"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    sx: {
+      padding: '1rem'
+    },
     variant: "body2",
     color: "text.secondary"
   }, "For any bugs or suggestions, please email richardkwang25@gmail.com"));
@@ -22415,7 +22428,8 @@ var VillagersInfo = function VillagersInfo() {
       variant: "h5",
       component: "div"
     }, villager.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      variant: "body2"
+      variant: "body2",
+      color: "text.secondary"
     }, villager.birthday, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: "card-information"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardContent__WEBPACK_IMPORTED_MODULE_7__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {

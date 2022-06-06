@@ -1994,7 +1994,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 50,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'cockle',
   },
@@ -2006,7 +2011,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 100,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'crab',
   },
@@ -2018,7 +2028,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 75,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'crayfish',
   },
@@ -2030,7 +2045,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 120,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'lobster',
   },
@@ -2042,7 +2062,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 30,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'mussel',
   },
@@ -2054,7 +2079,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 40,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'oyster',
   },
@@ -2066,7 +2096,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 20,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'periwinkle',
   },
@@ -2078,7 +2113,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 60,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'shrimp',
   },
@@ -2090,7 +2130,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 65,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'snail',
   },

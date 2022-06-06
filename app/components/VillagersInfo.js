@@ -111,7 +111,7 @@ const VillagersInfo = () => {
                           <Typography variant="h5" component="div">
                             {villager.name}
                           </Typography>
-                          <Typography variant="body2">
+                          <Typography variant="body2" color="text.secondary">
                             {villager.birthday}
                             <br />
                           </Typography>
