@@ -1832,7 +1832,7 @@ const fishingPoleFish = [
 
 const nightMarketFish = [
   {
-    id: 46,
+    id: 48,
     name: 'Midnight Squid',
     location: ['Ocean'],
     season: ['winter'],
@@ -1844,7 +1844,7 @@ const nightMarketFish = [
     imageUrl: 'midnight-squid',
   },
   {
-    id: 47,
+    id: 49,
     name: 'Spook Fish',
     location: ['Ocean'],
     season: ['winter'],
@@ -1856,7 +1856,7 @@ const nightMarketFish = [
     imageUrl: 'spook-fish',
   },
   {
-    id: 48,
+    id: 50,
     name: 'Blobfish',
     location: ['Ocean'],
     season: ['winter'],
@@ -1876,7 +1876,7 @@ const nightMarketFish = [
 
 const legendaryFish = [
   {
-    id: 49,
+    id: 51,
     name: 'Legend',
     location: ['Mountain Lake'],
     season: ['spring'],
@@ -1888,7 +1888,7 @@ const legendaryFish = [
     imageUrl: 'legend',
   },
   {
-    id: 50,
+    id: 52,
     name: 'Crimsonfish',
     location: ['Ocean'],
     season: ['summer'],
@@ -1900,7 +1900,7 @@ const legendaryFish = [
     imageUrl: 'crimsonfish',
   },
   {
-    id: 51,
+    id: 53,
     name: 'Angler',
     location: ['River (Town)'],
     season: ['fall'],
@@ -1912,7 +1912,7 @@ const legendaryFish = [
     imageUrl: 'angler',
   },
   {
-    id: 52,
+    id: 54,
     name: 'Glacierfish',
     location: ['River (Forest)'],
     season: ['winter'],
@@ -1924,7 +1924,7 @@ const legendaryFish = [
     imageUrl: 'glacierfish',
   },
   {
-    id: 53,
+    id: 55,
     name: 'Mutant Carp',
     location: ['The Sewers'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1939,7 +1939,7 @@ const legendaryFish = [
 
 const legendaryFish2 = [
   {
-    id: 54,
+    id: 56,
     name: 'Legend II',
     location: ['Mountain Lake'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1951,7 +1951,7 @@ const legendaryFish2 = [
     imageUrl: 'legend-ii',
   },
   {
-    id: 55,
+    id: 57,
     name: 'Son of Crimsonfish',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1963,7 +1963,7 @@ const legendaryFish2 = [
     imageUrl: 'son-of-crimsonfish',
   },
   {
-    id: 56,
+    id: 58,
     name: 'Ms. Angler',
     location: ['River (Town)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1975,7 +1975,7 @@ const legendaryFish2 = [
     imageUrl: 'ms-angler',
   },
   {
-    id: 57,
+    id: 59,
     name: 'Glacierfish Jr.',
     location: ['River (Forest)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1987,7 +1987,7 @@ const legendaryFish2 = [
     imageUrl: 'glacierfish-jr',
   },
   {
-    id: 58,
+    id: 60,
     name: 'Radioactive Carp',
     location: ['The Sewers'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2002,7 +2002,7 @@ const legendaryFish2 = [
 
 const crabPotFish = [
   {
-    id: 59,
+    id: 61,
     name: 'Clam',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2019,7 +2019,7 @@ const crabPotFish = [
     imageUrl: 'clam',
   },
   {
-    id: 60,
+    id: 62,
     name: 'Cockle',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2036,7 +2036,7 @@ const crabPotFish = [
     imageUrl: 'cockle',
   },
   {
-    id: 61,
+    id: 63,
     name: 'Crab',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2053,7 +2053,7 @@ const crabPotFish = [
     imageUrl: 'crab',
   },
   {
-    id: 62,
+    id: 64,
     name: 'Crayfish',
     location: ['Freshwater'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2070,7 +2070,7 @@ const crabPotFish = [
     imageUrl: 'crayfish',
   },
   {
-    id: 63,
+    id: 65,
     name: 'Lobster',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2087,7 +2087,7 @@ const crabPotFish = [
     imageUrl: 'lobster',
   },
   {
-    id: 64,
+    id: 66,
     name: 'Mussel',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2104,7 +2104,7 @@ const crabPotFish = [
     imageUrl: 'mussel',
   },
   {
-    id: 65,
+    id: 67,
     name: 'Oyster',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2121,7 +2121,7 @@ const crabPotFish = [
     imageUrl: 'oyster',
   },
   {
-    id: 66,
+    id: 68,
     name: 'Periwinkle',
     location: ['Freshwater'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2138,7 +2138,7 @@ const crabPotFish = [
     imageUrl: 'periwinkle',
   },
   {
-    id: 67,
+    id: 69,
     name: 'Shrimp',
     location: ['Ocean'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -2155,7 +2155,7 @@ const crabPotFish = [
     imageUrl: 'shrimp',
   },
   {
-    id: 68,
+    id: 70,
     name: 'Snail',
     location: ['Freshwater'],
     season: ['spring', 'summer', 'fall', 'winter'],

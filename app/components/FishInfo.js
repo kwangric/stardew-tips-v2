@@ -11,6 +11,8 @@ import FormLabel from '@mui/material/FormLabel'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
@@ -25,6 +27,7 @@ const FishInfo = () => {
   const [bundles, setBundles] = useState([])
   const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
+  const [multiplier, setMultiplier] = useState(1)
 
   const getFishBySeason = (season, fish) => {
     let newFish = {}
@@ -129,10 +132,10 @@ const FishInfo = () => {
             >
               <Box
                 sx={{
-                  height: '200px',
-                  width: '400px',
                   display: 'flex',
-                  justifyContent: 'space-between',
+                  justifyContent: 'center',
+                  gap: '20px 100px',
+                  flexWrap: 'wrap'
                 }}
               >
                 {/* Seasons */}
@@ -206,7 +209,7 @@ const FishInfo = () => {
                     display="flex"
                     flexDirection="column"
                     flexWrap="wrap"
-                    width="225px"
+                    width="275px"
                     height="175px"
                   >
                     <FormControlLabel
@@ -314,6 +317,34 @@ const FishInfo = () => {
                       label="Master Fisher's"
                     />
                   </Box>
+                </Box>
+                {/* Profession */}
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>
+                    Profession
+                  </FormLabel>
+                  <RadioGroup
+                    value={multiplier}
+                    onChange={(event) => {
+                      setMultiplier(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value={1}
+                      control={<Radio size="small" />}
+                      label="None"
+                    />
+                    <FormControlLabel
+                      value={1.25}
+                      control={<Radio size="small" />}
+                      label="Fisher"
+                    />
+                    <FormControlLabel
+                      value={1.5}
+                      control={<Radio size="small" />}
+                      label="Angler"
+                    />
+                  </RadioGroup>
                 </Box>
               </Box>
             </Container>
@@ -444,12 +475,24 @@ const FishInfo = () => {
                                 variant="body2"
                                 color="text.secondary"
                               >
-                                Normal: {fish.sellPrice}g <br />
-                                Silver: {Math.floor(
-                                  fish.sellPrice * 1.25
-                                )}g <br />
-                                Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                                Iridium: {Math.floor(fish.sellPrice * 2)}g
+                                Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
                                 <br />
                               </Typography>
                             </CardContent>

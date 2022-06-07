@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
 import Container from '@mui/material/Container'
 import FormGroup from '@mui/material/FormGroup'
+import FormLabel from '@mui/material/FormLabel'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import Grid from '@mui/material/Grid'
@@ -72,51 +73,56 @@ const CropsInfo = () => {
           </Typography>
           <Box className="component-view">
             <Container className="filters" align="center">
-              <Box sx={{ height: '150px', width: '100px'}}>
-                <FormGroup>
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        className="seasonFilter"
-                        defaultChecked
-                        size="small"
-                        value="spring"
-                        onChange={(event) => {
-                          changeCrops(event.target.value)
-                        }}
+              <Box sx={{ height: '200px', width: '100px' }}>
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>Seasons</FormLabel>
+                  <Box>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="spring"
+                            onChange={(event) => {
+                              changeCrops(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Spring"
                       />
-                    }
-                    label="Spring"
-                  />
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        className="seasonFilter"
-                        defaultChecked
-                        size="small"
-                        value="summer"
-                        onChange={(event) => {
-                          changeCrops(event.target.value)
-                        }}
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="summer"
+                            onChange={(event) => {
+                              changeCrops(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Summer"
                       />
-                    }
-                    label="Summer"
-                  />
-                  <FormControlLabel
-                    control={
-                      <Checkbox
-                        className="seasonFilter"
-                        defaultChecked
-                        size="small"
-                        value="fall"
-                        onChange={(event) => {
-                          changeCrops(event.target.value)
-                        }}
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="fall"
+                            onChange={(event) => {
+                              changeCrops(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Fall"
                       />
-                    }
-                    label="Fall"
-                  />
-                </FormGroup>
+                    </FormGroup>
+                  </Box>
+                </Box>
               </Box>
             </Container>
             <Grid
