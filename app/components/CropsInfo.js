@@ -11,6 +11,8 @@ import FormGroup from '@mui/material/FormGroup'
 import FormLabel from '@mui/material/FormLabel'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
@@ -22,6 +24,7 @@ const CropsInfo = () => {
   const [crops, setCrops] = useState([])
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
   const [displayedCrops, setDisplayedCrops] = useState([])
+  const [priceMultiplier, setPriceMultiplier] = useState(1)
 
   const getCropsBySeason = (season, crops) => {
     if (Array.isArray(season)) {
@@ -72,8 +75,13 @@ const CropsInfo = () => {
             Crops
           </Typography>
           <Box className="component-view">
-            <Container className="filters" align="center">
-              <Box sx={{ height: '200px', width: '100px' }}>
+            <Container className="filters"
+              display="flex"
+              align="center"
+              direction="row">
+              <Box sx={{ display: 'flex',
+                  justifyContent: 'center', gap: '20px 100px',
+                  flexWrap: 'wrap'}}>
                 <Box display="flex" flexDirection="column" gap="1rem">
                   <FormLabel>Seasons</FormLabel>
                   <Box>
@@ -122,6 +130,29 @@ const CropsInfo = () => {
                       />
                     </FormGroup>
                   </Box>
+                </Box>
+                {/* Profession */}
+                <Box display="flex" flexDirection="column" gap="1rem" height='175px'>
+                  <FormLabel>
+                    Profession
+                  </FormLabel>
+                  <RadioGroup
+                    value={priceMultiplier}
+                    onChange={(event) => {
+                      setPriceMultiplier(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value={1}
+                      control={<Radio size="small" />}
+                      label="None"
+                    />
+                    <FormControlLabel
+                      value={1.10}
+                      control={<Radio size="small" />}
+                      label="Tiller"
+                    />
+                  </RadioGroup>
                 </Box>
               </Box>
             </Container>
@@ -292,12 +323,12 @@ const CropsInfo = () => {
                                 variant="body2"
                                 color="text.secondary"
                               >
-                                Normal: {crop.sellPrice}g <br />
+                                Normal: {Math.floor(crop.sellPrice * priceMultiplier)}g <br />
                                 Silver: {Math.floor(
-                                  crop.sellPrice * 1.25
+                                  Math.floor(crop.sellPrice * 1.25) * priceMultiplier
                                 )}g <br />
-                                Gold: {Math.floor(crop.sellPrice * 1.5)}g <br />
-                                Iridium: {Math.floor(crop.sellPrice * 2)}g
+                                Gold: {Math.floor(Math.floor(crop.sellPrice * 1.5) * priceMultiplier)}g <br />
+                                Iridium: {Math.floor(Math.floor(crop.sellPrice * 2)* priceMultiplier)}g
                                 <br />
                               </Typography>
                             </CardContent>

@@ -350,6 +350,7 @@ const FishInfo = () => {
             </Container>
 
             {/* Fishing Pole Fish */}
+            {displayedFish.fishingPoleFish.length? (<>
             <Box className="section-title">
               <Typography variant="h4">Fishing Pole Fish</Typography>
             </Box>
@@ -540,8 +541,9 @@ const FishInfo = () => {
                   </Grid>
                 )
               })}
-            </Grid>
+            </Grid></>) : <></>}
             {/* Night Market Fish */}
+            {displayedFish.nightMarketFish.length? (<>
             <Box className="section-title">
               <Typography variant="h4">Night Market Fish</Typography>
               <br />
@@ -600,12 +602,25 @@ const FishInfo = () => {
                               <br />
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                              Normal: {fish.sellPrice}g <br />
-                              Silver: {Math.floor(fish.sellPrice * 1.25)}g{' '}
-                              <br />
-                              Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                              Iridium: {Math.floor(fish.sellPrice * 2)}g
-                              <br />
+                            Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
                             </Typography>
                           </CardContent>
                         </Box>
@@ -625,8 +640,9 @@ const FishInfo = () => {
                   </Grid>
                 )
               })}
-            </Grid>
+            </Grid></>) : <></>}
             {/* Legendary Fish */}
+            {displayedFish.legendaryFish.length? (<>
             <Box className="section-title">
               <Typography variant="h4">Legendary Fish</Typography>
               <br />
@@ -752,12 +768,25 @@ const FishInfo = () => {
                               <br />
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                              Normal: {fish.sellPrice}g <br />
-                              Silver: {Math.floor(fish.sellPrice * 1.25)}g{' '}
-                              <br />
-                              Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                              Iridium: {Math.floor(fish.sellPrice * 2)}g
-                              <br />
+                            Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
                             </Typography>
                           </CardContent>
                         </Box>
@@ -788,8 +817,9 @@ const FishInfo = () => {
                   </Grid>
                 )
               })}
-            </Grid>
+            </Grid></>) : <></>}
             {/* Legendary Fish 2 */}
+            {displayedFish.legendaryFish2.length? (<>
             <Box className="section-title">
               <Typography variant="h4">Legendary Fish 2</Typography>
               <br />
@@ -894,12 +924,25 @@ const FishInfo = () => {
                               <br />
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                              Normal: {fish.sellPrice}g <br />
-                              Silver: {Math.floor(fish.sellPrice * 1.25)}g{' '}
-                              <br />
-                              Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                              Iridium: {Math.floor(fish.sellPrice * 2)}g
-                              <br />
+                            Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
                             </Typography>
                           </CardContent>
                         </Box>
@@ -930,8 +973,9 @@ const FishInfo = () => {
                   </Grid>
                 )
               })}
-            </Grid>
+            </Grid></>) : <></>}
             {/* Crab Pot Fish */}
+            {displayedFish.crabPotFish.length? (<>
             <Box className="section-title">
               <Typography variant="h4">Crab Pot Fish</Typography>
               <br />
@@ -1006,12 +1050,25 @@ const FishInfo = () => {
                               <br />
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
-                              Normal: {fish.sellPrice}g <br />
-                              Silver: {Math.floor(fish.sellPrice * 1.25)}g{' '}
-                              <br />
-                              Gold: {Math.floor(fish.sellPrice * 1.5)}g <br />
-                              Iridium: {Math.floor(fish.sellPrice * 2)}g
-                              <br />
+                            Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
                             </Typography>
                           </CardContent>
                         </Box>
@@ -1031,9 +1088,9 @@ const FishInfo = () => {
                   </Grid>
                 )
               })}
-            </Grid>
+            </Grid></>) : <></>}
           </Box>
-          {Object.keys(displayedFish).length > 0 ? (
+          {Object.keys(displayedFish).filter(key => displayedFish[key].length > 0).length > 0 ? (
             <Box sx={{ marginTop: '2rem' }}>
               <BottomNavigation
                 showLabels

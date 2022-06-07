@@ -21978,20 +21978,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material_Card__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/Card */ "./node_modules/@mui/material/Card/Card.js");
-/* harmony import */ var _mui_material_CardContent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/CardContent */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var _mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/CardMedia */ "./node_modules/@mui/material/CardMedia/CardMedia.js");
-/* harmony import */ var _mui_material_CircularProgress__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material/CircularProgress */ "./node_modules/@mui/material/CircularProgress/CircularProgress.js");
+/* harmony import */ var _mui_material_Card__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Card */ "./node_modules/@mui/material/Card/Card.js");
+/* harmony import */ var _mui_material_CardContent__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material/CardContent */ "./node_modules/@mui/material/CardContent/CardContent.js");
+/* harmony import */ var _mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material/CardMedia */ "./node_modules/@mui/material/CardMedia/CardMedia.js");
+/* harmony import */ var _mui_material_CircularProgress__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mui/material/CircularProgress */ "./node_modules/@mui/material/CircularProgress/CircularProgress.js");
 /* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _mui_material_FormGroup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/FormGroup */ "./node_modules/@mui/material/FormGroup/FormGroup.js");
 /* harmony import */ var _mui_material_FormLabel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/FormLabel */ "./node_modules/@mui/material/FormLabel/FormLabel.js");
 /* harmony import */ var _mui_material_FormControlLabel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/FormControlLabel */ "./node_modules/@mui/material/FormControlLabel/FormControlLabel.js");
 /* harmony import */ var _mui_material_Checkbox__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Checkbox */ "./node_modules/@mui/material/Checkbox/Checkbox.js");
-/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
-/* harmony import */ var _mui_material_Tooltip__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Tooltip */ "./node_modules/@mui/material/Tooltip/Tooltip.js");
+/* harmony import */ var _mui_material_Radio__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/Radio */ "./node_modules/@mui/material/Radio/Radio.js");
+/* harmony import */ var _mui_material_RadioGroup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/RadioGroup */ "./node_modules/@mui/material/RadioGroup/RadioGroup.js");
+/* harmony import */ var _mui_material_Grid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Grid */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material_Tooltip__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/Tooltip */ "./node_modules/@mui/material/Tooltip/Tooltip.js");
 /* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
-/* harmony import */ var _mui_material_BottomNavigation__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material/BottomNavigation */ "./node_modules/@mui/material/BottomNavigation/BottomNavigation.js");
-/* harmony import */ var _mui_material_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mui/material/BottomNavigationAction */ "./node_modules/@mui/material/BottomNavigationAction/BottomNavigationAction.js");
+/* harmony import */ var _mui_material_BottomNavigation__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mui/material/BottomNavigation */ "./node_modules/@mui/material/BottomNavigation/BottomNavigation.js");
+/* harmony import */ var _mui_material_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mui/material/BottomNavigationAction */ "./node_modules/@mui/material/BottomNavigationAction/BottomNavigationAction.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -22042,6 +22044,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
 var CropsInfo = function CropsInfo() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -22057,6 +22061,11 @@ var CropsInfo = function CropsInfo() {
       _useState6 = _slicedToArray(_useState5, 2),
       displayedCrops = _useState6[0],
       setDisplayedCrops = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+      _useState8 = _slicedToArray(_useState7, 2),
+      priceMultiplier = _useState8[0],
+      setPriceMultiplier = _useState8[1];
 
   var getCropsBySeason = function getCropsBySeason(season, crops) {
     if (Array.isArray(season)) {
@@ -22160,11 +22169,15 @@ var CropsInfo = function CropsInfo() {
     className: "component-view"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "filters",
-    align: "center"
+    display: "flex",
+    align: "center",
+    direction: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     sx: {
-      height: '200px',
-      width: '100px'
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '20px 100px',
+      flexWrap: 'wrap'
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     display: "flex",
@@ -22203,7 +22216,29 @@ var CropsInfo = function CropsInfo() {
       }
     }),
     label: "Fall"
-  })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    display: "flex",
+    flexDirection: "column",
+    gap: "1rem",
+    height: "175px"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_FormLabel__WEBPACK_IMPORTED_MODULE_5__["default"], null, "Profession"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_RadioGroup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    value: priceMultiplier,
+    onChange: function onChange(event) {
+      setPriceMultiplier(event.target.value);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_FormControlLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: 1,
+    control: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Radio__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      size: "small"
+    }),
+    label: "None"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_FormControlLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    value: 1.10,
+    control: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Radio__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      size: "small"
+    }),
+    label: "Tiller"
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
     container: true,
     spacing: 2,
     direction: "row",
@@ -22214,10 +22249,10 @@ var CropsInfo = function CropsInfo() {
     columnGap: "50px",
     rowGap: "20px"
   }, displayedCrops.map(function (crop) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Grid__WEBPACK_IMPORTED_MODULE_11__["default"], {
       key: crop.id,
       item: true
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Card__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Card__WEBPACK_IMPORTED_MODULE_12__["default"], {
       className: "card",
       variant: "outlined",
       sx: {
@@ -22245,10 +22280,10 @@ var CropsInfo = function CropsInfo() {
         margin: '4% 0'
       }
     }, crop.season.map(function (season, index) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Tooltip__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Tooltip__WEBPACK_IMPORTED_MODULE_13__["default"], {
         key: index,
         title: season[0].toUpperCase() + season.slice(1, season.length)
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_14__["default"], {
         component: "img",
         sx: {
           width: 25,
@@ -22266,7 +22301,7 @@ var CropsInfo = function CropsInfo() {
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       className: "card-information"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardContent__WEBPACK_IMPORTED_MODULE_13__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardContent__WEBPACK_IMPORTED_MODULE_15__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body3"
     }, "Cost", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), crop.jojaPrice ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
@@ -22302,13 +22337,13 @@ var CropsInfo = function CropsInfo() {
     }, "Sell Price", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
       color: "text.secondary"
-    }, "Normal: ", crop.sellPrice, "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(crop.sellPrice * 1.25), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(crop.sellPrice * 1.5), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(crop.sellPrice * 2), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Normal: ", Math.floor(crop.sellPrice * priceMultiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(Math.floor(crop.sellPrice * 1.25) * priceMultiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(Math.floor(crop.sellPrice * 1.5) * priceMultiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(Math.floor(crop.sellPrice * 2) * priceMultiplier), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         display: 'flex',
         alignContent: 'center'
       },
       className: "card-image"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CardMedia__WEBPACK_IMPORTED_MODULE_14__["default"], {
       component: "img",
       sx: {
         width: 75,
@@ -22326,7 +22361,7 @@ var CropsInfo = function CropsInfo() {
     sx: {
       marginTop: '2rem'
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_BottomNavigation__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_BottomNavigation__WEBPACK_IMPORTED_MODULE_16__["default"], {
     showLabels: true,
     onChange: function onChange() {
       window.scrollTo({
@@ -22334,9 +22369,9 @@ var CropsInfo = function CropsInfo() {
         behavior: 'smooth'
       });
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_BottomNavigationAction__WEBPACK_IMPORTED_MODULE_17__["default"], {
     label: "Back to top"
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, ":(")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CircularProgress__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, ":(")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_CircularProgress__WEBPACK_IMPORTED_MODULE_18__["default"], {
     variant: "indeterminate",
     size: 150,
     thickness: 3
@@ -22794,7 +22829,7 @@ var FishInfo = function FishInfo() {
       size: "small"
     }),
     label: "Angler"
-  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))))), displayedFish.fishingPoleFish.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "section-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4"
@@ -22925,7 +22960,7 @@ var FishInfo = function FishInfo() {
         alt: bundle.imageUrl
       }));
     }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)))));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), displayedFish.nightMarketFish.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "section-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4"
@@ -22978,7 +23013,7 @@ var FishInfo = function FishInfo() {
     }, "Sell Price", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
       color: "text.secondary"
-    }, "Normal: ", fish.sellPrice, "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(fish.sellPrice * 1.25), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(fish.sellPrice * 1.5), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(fish.sellPrice * 2), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Normal:", ' ', Math.floor(fish.sellPrice * multiplier), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.25) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.5) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium:", ' ', Math.floor(Math.floor(fish.sellPrice * 2) * multiplier), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         display: 'flex',
         alignContent: 'center'
@@ -22993,7 +23028,7 @@ var FishInfo = function FishInfo() {
       image: "/images/fish/".concat(fish.imageUrl, ".png"),
       alt: fish.imageUrl
     })))));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), displayedFish.legendaryFish.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "section-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4"
@@ -23090,7 +23125,7 @@ var FishInfo = function FishInfo() {
     }, "Sell Price", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
       color: "text.secondary"
-    }, "Normal: ", fish.sellPrice, "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(fish.sellPrice * 1.25), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(fish.sellPrice * 1.5), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(fish.sellPrice * 2), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Normal:", ' ', Math.floor(fish.sellPrice * multiplier), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.25) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.5) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium:", ' ', Math.floor(Math.floor(fish.sellPrice * 2) * multiplier), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         display: 'flex',
         alignContent: 'center'
@@ -23110,7 +23145,7 @@ var FishInfo = function FishInfo() {
       },
       variant: "subtitle2"
     }, fish.notes) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), displayedFish.legendaryFish2.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "section-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4"
@@ -23192,7 +23227,7 @@ var FishInfo = function FishInfo() {
     }, "Sell Price", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
       color: "text.secondary"
-    }, "Normal: ", fish.sellPrice, "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(fish.sellPrice * 1.25), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(fish.sellPrice * 1.5), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(fish.sellPrice * 2), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Normal:", ' ', Math.floor(fish.sellPrice * multiplier), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.25) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.5) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium:", ' ', Math.floor(Math.floor(fish.sellPrice * 2) * multiplier), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         display: 'flex',
         alignContent: 'center'
@@ -23212,7 +23247,7 @@ var FishInfo = function FishInfo() {
       },
       variant: "subtitle2"
     }, fish.notes) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)));
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null), displayedFish.crabPotFish.length ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "section-title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
     variant: "h4"
@@ -23273,7 +23308,7 @@ var FishInfo = function FishInfo() {
     }, "Sell Price", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_2__["default"], {
       variant: "body2",
       color: "text.secondary"
-    }, "Normal: ", fish.sellPrice, "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver: ", Math.floor(fish.sellPrice * 1.25), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold: ", Math.floor(fish.sellPrice * 1.5), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium: ", Math.floor(fish.sellPrice * 2), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }, "Normal:", ' ', Math.floor(fish.sellPrice * multiplier), "g", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Silver:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.25) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Gold:", ' ', Math.floor(Math.floor(fish.sellPrice * 1.5) * multiplier), "g ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), "Iridium:", ' ', Math.floor(Math.floor(fish.sellPrice * 2) * multiplier), "g", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
       sx: {
         display: 'flex',
         alignContent: 'center'
@@ -23288,7 +23323,9 @@ var FishInfo = function FishInfo() {
       image: "/images/fish/".concat(fish.imageUrl, ".png"),
       alt: fish.imageUrl
     })))));
-  }))), Object.keys(displayedFish).length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null)), Object.keys(displayedFish).filter(function (key) {
+    return displayedFish[key].length > 0;
+  }).length > 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_3__["default"], {
     sx: {
       marginTop: '2rem'
     }
