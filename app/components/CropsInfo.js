@@ -22,16 +22,15 @@ const CropsInfo = () => {
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
   const [displayedCrops, setDisplayedCrops] = useState([])
 
-
   const getCropsBySeason = (season, crops) => {
     if (Array.isArray(season)) {
       return crops.filter((crop) => {
-        const combinedSeasons = new Set(crop.season.concat(season));
-        return combinedSeasons.size != crop.season.length + season.length;
-      });
+        const combinedSeasons = new Set(crop.season.concat(season))
+        return combinedSeasons.size != crop.season.length + season.length
+      })
     }
-    return crops.filter((crop) => crop.season.includes(season));
-  };
+    return crops.filter((crop) => crop.season.includes(season))
+  }
 
   const getCrops = async () => {
     try {
@@ -43,15 +42,15 @@ const CropsInfo = () => {
   }
 
   const changeCrops = (season) => {
-    let newSeasons = seasons
+    let newSeasons = [...seasons]
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(seasons, crops))
+      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(seasons, crops))
+      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
     }
   }
 
@@ -72,19 +71,49 @@ const CropsInfo = () => {
             Crops
           </Typography>
           <Box className="component-view">
-            <Container className="filters" display="flex" align="center">
-            <Box sx={{ height: '150px', width: '100px' }} >
+            <Container className="filters" align="center">
+              <Box sx={{ height: '150px', width: '100px'}}>
                 <FormGroup>
                   <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="spring" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    control={
+                      <Checkbox
+                        className="seasonFilter"
+                        defaultChecked
+                        size="small"
+                        value="spring"
+                        onChange={(event) => {
+                          changeCrops(event.target.value)
+                        }}
+                      />
+                    }
                     label="Spring"
                   />
                   <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="summer" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    control={
+                      <Checkbox
+                        className="seasonFilter"
+                        defaultChecked
+                        size="small"
+                        value="summer"
+                        onChange={(event) => {
+                          changeCrops(event.target.value)
+                        }}
+                      />
+                    }
                     label="Summer"
                   />
                   <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="fall" onChange={(event)=> {changeCrops(event.target.value)}}/>}
+                    control={
+                      <Checkbox
+                        className="seasonFilter"
+                        defaultChecked
+                        size="small"
+                        value="fall"
+                        onChange={(event) => {
+                          changeCrops(event.target.value)
+                        }}
+                      />
+                    }
                     label="Fall"
                   />
                 </FormGroup>
@@ -297,19 +326,23 @@ const CropsInfo = () => {
               })}
             </Grid>
           </Box>
-          {displayedCrops.length > 0 ? (<Box sx={{ marginTop: '2rem' }}>
-            <BottomNavigation
-              showLabels
-              onChange={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                })
-              }}
-            >
-              <BottomNavigationAction label="Back to top" />
-            </BottomNavigation>
-          </Box>) : <h2>:(</h2>}
+          {displayedCrops.length > 0 ? (
+            <Box sx={{ marginTop: '2rem' }}>
+              <BottomNavigation
+                showLabels
+                onChange={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                  })
+                }}
+              >
+                <BottomNavigationAction label="Back to top" />
+              </BottomNavigation>
+            </Box>
+          ) : (
+            <h2>:(</h2>
+          )}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />

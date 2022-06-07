@@ -1261,6 +1261,33 @@ const fishingPoleFish = [
   },
   {
     id: 10,
+    name: 'Eel',
+    location: ['Ocean'],
+    season: ['spring', 'fall'],
+    time: ['4pm - 2am'],
+    weather: ['Rain'],
+    sellPrice: 85,
+    bundle: [{
+      name: 'Night Fishing Bundle',
+      imageUrl: 'night-fishing-bundle',
+    },],
+    notes: null,
+    imageUrl: 'eel',
+  },
+  {
+    id: 11,
+    name: 'Flounder',
+    location: ['Ocean', 'Ginger Island (Ocean) (All Year)'],
+    season: ['spring', 'summer'],
+    time: ['6am - 8pm'],
+    weather: ['Sunny', 'Windy', 'Rain'],
+    sellPrice: 100,
+    bundle: null,
+    notes: null,
+    imageUrl: 'Flounder',
+  },
+  {
+    id: 12,
     name: 'Ghostfish',
     location: ['Mines (20, 60)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1277,7 +1304,7 @@ const fishingPoleFish = [
     imageUrl: 'ghostfish',
   },
   {
-    id: 11,
+    id: 13,
     name: 'Halibut',
     location: ['Ocean'],
     season: ['spring', 'summer', 'winter'],
@@ -1289,7 +1316,7 @@ const fishingPoleFish = [
     imageUrl: 'halibut',
   },
   {
-    id: 12,
+    id: 14,
     name: 'Herring',
     location: ['Ocean'],
     season: ['spring', 'winter'],
@@ -1301,7 +1328,7 @@ const fishingPoleFish = [
     imageUrl: 'herring',
   },
   {
-    id: 13,
+    id: 15,
     name: 'Ice Pip',
     location: ['Mines (60)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1313,7 +1340,7 @@ const fishingPoleFish = [
     imageUrl: 'ice-pip',
   },
   {
-    id: 14,
+    id: 16,
     name: 'Largemouth Bass',
     location: ['Mountain Lake'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1334,7 +1361,7 @@ const fishingPoleFish = [
     imageUrl: 'largemouth-bass',
   },
   {
-    id: 15,
+    id: 17,
     name: 'Lava Eel',
     location: ['Mines (100)', 'Volcano Caldera'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1351,7 +1378,7 @@ const fishingPoleFish = [
     imageUrl: 'lava-eel',
   },
   {
-    id: 16,
+    id: 18,
     name: 'Lingcod',
     location: ['River (Town & Forest)', 'Mountain Lake'],
     season: ['winter'],
@@ -1363,7 +1390,7 @@ const fishingPoleFish = [
     imageUrl: 'lingcod',
   },
   {
-    id: 17,
+    id: 19,
     name: 'Lionfish',
     location: ['Ginger Island (Ocean)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1375,7 +1402,7 @@ const fishingPoleFish = [
     imageUrl: 'lionfish',
   },
   {
-    id: 18,
+    id: 20,
     name: 'Midnight Carp',
     location: [
       'Mountain Lake',
@@ -1391,7 +1418,7 @@ const fishingPoleFish = [
     imageUrl: 'midnight-carp',
   },
   {
-    id: 19,
+    id: 21,
     name: 'Octopus',
     location: ['Ocean'],
     season: ['summer'],
@@ -1408,7 +1435,7 @@ const fishingPoleFish = [
     imageUrl: 'octopus',
   },
   {
-    id: 20,
+    id: 22,
     name: 'Perch',
     location: ['River (Town & Forest)', 'Forest Pond', 'Mountain Lake'],
     season: ['winter'],
@@ -1420,7 +1447,7 @@ const fishingPoleFish = [
     imageUrl: 'perch',
   },
   {
-    id: 21,
+    id: 23,
     name: 'Pike',
     location: ['River (Town & Forest)', 'Forest Pond'],
     season: ['summer', 'winter'],
@@ -1432,7 +1459,7 @@ const fishingPoleFish = [
     imageUrl: 'pike',
   },
   {
-    id: 22,
+    id: 24,
     name: 'Pufferfish',
     location: ['Ocean', 'Ginger Island (Ocean) (All Year)'],
     season: ['summer'],
@@ -1449,7 +1476,7 @@ const fishingPoleFish = [
     imageUrl: 'pufferfish',
   },
   {
-    id: 23,
+    id: 25,
     name: 'Rainbow Trout',
     location: ['River (Town & Forest)', 'Mountain Lake'],
     season: ['summer'],
@@ -1461,7 +1488,7 @@ const fishingPoleFish = [
     imageUrl: 'rainbow-trout',
   },
   {
-    id: 24,
+    id: 26,
     name: 'Red Mullet',
     location: ['Ocean'],
     season: ['summer', 'winter'],
@@ -1473,7 +1500,7 @@ const fishingPoleFish = [
     imageUrl: 'red-mullet',
   },
   {
-    id: 25,
+    id: 27,
     name: 'Red Snapper',
     location: ['Ocean'],
     season: ['summer', 'fall', 'winter'],
@@ -1490,7 +1517,7 @@ const fishingPoleFish = [
     imageUrl: 'red-snapper',
   },
   {
-    id: 26,
+    id: 28,
     name: 'Salmon',
     location: ['River (Town & Forest)'],
     season: ['fall'],
@@ -1502,7 +1529,7 @@ const fishingPoleFish = [
     imageUrl: 'salmon',
   },
   {
-    id: 27,
+    id: 29,
     name: 'Sandfish',
     location: ['The Desert'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1519,7 +1546,7 @@ const fishingPoleFish = [
     imageUrl: 'sandfish',
   },
   {
-    id: 28,
+    id: 30,
     name: 'Sardine',
     location: ['Ocean'],
     season: ['spring', 'fall', 'winter'],
@@ -1536,7 +1563,7 @@ const fishingPoleFish = [
     imageUrl: 'sardine',
   },
   {
-    id: 29,
+    id: 31,
     name: 'Scorpion Carp',
     location: ['The Desert'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1553,7 +1580,7 @@ const fishingPoleFish = [
     imageUrl: 'scorpion-carp',
   },
   {
-    id: 30,
+    id: 32,
     name: 'Sea Cucumber',
     location: ['Ocean'],
     season: ['fall', 'winter'],
@@ -1565,7 +1592,7 @@ const fishingPoleFish = [
     imageUrl: 'sea-cucumber',
   },
   {
-    id: 31,
+    id: 33,
     name: 'Shad',
     location: ['River (Town & Forest)'],
     season: ['spring', 'summer', 'fall'],
@@ -1586,7 +1613,7 @@ const fishingPoleFish = [
     imageUrl: 'shad',
   },
   {
-    id: 32,
+    id: 34,
     name: 'Slimejack',
     location: ['Mutant Bug Lair'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1598,7 +1625,7 @@ const fishingPoleFish = [
     imageUrl: 'slimejack',
   },
   {
-    id: 33,
+    id: 35,
     name: 'Smallmouth Bass',
     location: ['River (Town)', 'Forest Pond'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1610,7 +1637,7 @@ const fishingPoleFish = [
     imageUrl: 'smallmouth-bass',
   },
   {
-    id: 34,
+    id: 36,
     name: 'Squid',
     location: ['Ocean'],
     season: ['winter'],
@@ -1622,7 +1649,7 @@ const fishingPoleFish = [
     imageUrl: 'squid',
   },
   {
-    id: 35,
+    id: 37,
     name: 'Stingray',
     location: ['Ginger Island (Pirate Cove)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1634,7 +1661,7 @@ const fishingPoleFish = [
     imageUrl: 'stingray',
   },
   {
-    id: 36,
+    id: 38,
     name: 'Stonefish',
     location: ['Mines (20)'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1646,7 +1673,7 @@ const fishingPoleFish = [
     imageUrl: 'stonefish',
   },
   {
-    id: 37,
+    id: 39,
     name: 'Sturgeon',
     location: ['Mountain Lake'],
     season: ['summer', 'winter'],
@@ -1663,7 +1690,7 @@ const fishingPoleFish = [
     imageUrl: 'sturgeon',
   },
   {
-    id: 38,
+    id: 40,
     name: 'Sunfish',
     location: ['River (Town + Forest)'],
     season: ['spring', 'summer'],
@@ -1680,7 +1707,7 @@ const fishingPoleFish = [
     imageUrl: 'sunfish',
   },
   {
-    id: 39,
+    id: 41,
     name: 'Super Cucumber',
     location: ['Ocean', 'Ginger Island (Ocean) (All Year)'],
     season: ['summer', 'fall'],
@@ -1692,7 +1719,7 @@ const fishingPoleFish = [
     imageUrl: 'super-cucumber',
   },
   {
-    id: 40,
+    id: 42,
     name: 'Tiger Trout',
     location: ['River (Town & Forest)'],
     season: ['fall', 'winter'],
@@ -1709,7 +1736,7 @@ const fishingPoleFish = [
     imageUrl: 'tiger-trout',
   },
   {
-    id: 41,
+    id: 43,
     name: 'Tilapia',
     location: ['Ocean', 'Ginger Island (River) (All Year)'],
     season: ['summer', 'fall'],
@@ -1726,7 +1753,7 @@ const fishingPoleFish = [
     imageUrl: 'tilapia',
   },
   {
-    id: 42,
+    id: 44,
     name: 'Tuna',
     location: ['Ocean', 'Ginger Island (Ocean) (All Year)'],
     season: ['summer', 'winter'],
@@ -1747,7 +1774,7 @@ const fishingPoleFish = [
     imageUrl: 'tuna',
   },
   {
-    id: 43,
+    id: 45,
     name: 'Void Salmon',
     location: ["Witch's Swamp"],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1764,7 +1791,7 @@ const fishingPoleFish = [
     imageUrl: 'void-salmon',
   },
   {
-    id: 44,
+    id: 46,
     name: 'Walleye',
     location: ['River (Town & Forest)', 'Forest Pond', 'Mountain Lake'],
     season: ['fall', 'winter'],
@@ -1785,7 +1812,7 @@ const fishingPoleFish = [
     imageUrl: 'walleye',
   },
   {
-    id: 45,
+    id: 47,
     name: 'Woodskip',
     location: ['Secret Woods', 'Forest Farm'],
     season: ['spring', 'summer', 'fall', 'winter'],
@@ -1982,7 +2009,12 @@ const crabPotFish = [
     time: ['Anytime'],
     weather: ['Sunny', 'Windy', 'Rain'],
     sellPrice: 50,
-    bundle: null,
+    bundle: [
+      {
+        name: 'Crab Pot Bundle',
+        imageUrl: 'crab-pot-bundle',
+      },
+    ],
     notes: null,
     imageUrl: 'clam',
   },

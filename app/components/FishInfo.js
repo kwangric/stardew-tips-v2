@@ -7,6 +7,7 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
 import Container from '@mui/material/Container'
+import FormLabel from '@mui/material/FormLabel'
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
@@ -20,20 +21,38 @@ import axios from 'axios'
 const FishInfo = () => {
   const [fish, setFish] = useState({})
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall', 'winter'])
+  const [seasonFish, setSeasonFish] = useState({})
+  const [bundles, setBundles] = useState([])
+  const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
 
   const getFishBySeason = (season, fish) => {
     let newFish = {}
     for (let key in fish) {
-      if (Array.isArray(season)) {
-        newFish[key] = fish[key].filter((fish) => {
-          const combinedSeasons = new Set(fish.season.concat(season));
-          return combinedSeasons.size != fish.season.length + season.length;
-        });
-      }
+      newFish[key] = fish[key].filter((fish) => {
+        const combinedSeasons = new Set(fish.season.concat(season))
+        return combinedSeasons.size != fish.season.length + season.length
+      })
     }
     return newFish
-  };
+  }
+
+  const getFishByBundle = (bundles, fish) => {
+    let newFish = {}
+    for (let key in fish) {
+      newFish[key] = fish[key].filter((singleFish) => {
+        if (Array.isArray(singleFish.bundle)) {
+          return (
+            singleFish.bundle.filter((bundle) =>
+              bundles.includes(bundle.imageUrl)
+            ).length > 0
+          )
+        }
+        return false
+      })
+    }
+    return newFish
+  }
 
   const getFish = async () => {
     try {
@@ -44,16 +63,42 @@ const FishInfo = () => {
     }
   }
 
-  const changeFish = (season) => {
-    let newSeasons = seasons
+  const changeFishSeason = (season) => {
+    let newSeasons = [...seasons]
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      setDisplayedFish(getFishBySeason(seasons, fish))
+      const newFish = getFishBySeason(newSeasons, fish)
+      setSeasonFish(newFish)
+      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      setDisplayedFish(getFishBySeason(seasons, fish))
+      const newFish = getFishBySeason(newSeasons, fish)
+      setSeasonFish(newFish)
+      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+    }
+  }
+
+  const changeFishBundle = (bundle) => {
+    let newBundles = [...bundles]
+    if (bundles.includes(bundle)) {
+      newBundles.splice(bundles.indexOf(bundle), 1)
+      setBundles(newBundles)
+      if (newBundles.length === 0) {
+        setBundleFish(fish)
+        setDisplayedFish(getFishBySeason(seasons, fish))
+      } else {
+        const newFish = getFishByBundle(newBundles, fish)
+        setBundleFish(newFish)
+        setDisplayedFish(getFishByBundle(newBundles, seasonFish))
+      }
+    } else {
+      newBundles.push(bundle)
+      setBundles(newBundles)
+      const newFish = getFishByBundle(newBundles, fish)
+      setBundleFish(newFish)
+      setDisplayedFish(getFishByBundle(newBundles, seasonFish))
     }
   }
 
@@ -61,7 +106,9 @@ const FishInfo = () => {
     const gotFish = async () => {
       const newFish = await getFish()
       setFish(newFish)
-      setDisplayedFish(getFishBySeason(seasons, newFish))
+      setSeasonFish(newFish)
+      setBundleFish(newFish)
+      setDisplayedFish(newFish)
     }
     gotFish()
   }, [])
@@ -70,28 +117,204 @@ const FishInfo = () => {
     <>
       {Object.keys(fish).length > 0 ? (
         <>
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">Fish</Typography>
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">
+            Fish
+          </Typography>
           <Box className="component-view">
-          <Container className="filters" display="flex" align="center" direction="row">
-            <Box sx={{ height: '150px', width: '100px' }} >
-                <FormGroup>
-                  <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="spring" onChange={(event)=> {changeFish(event.target.value)}}/>}
-                    label="Spring"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="summer" onChange={(event)=> {changeFish(event.target.value)}}/>}
-                    label="Summer"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="fall" onChange={(event)=> {changeFish(event.target.value)}}/>}
-                    label="Fall"
-                  />
-                  <FormControlLabel
-                    control={<Checkbox className="seasonFilter" defaultChecked size="small" value="winter" onChange={(event)=> {changeFish(event.target.value)}}/>}
-                    label="Winter"
-                  />
-                </FormGroup>
+            <Container
+              className="filters"
+              display="flex"
+              align="center"
+              direction="row"
+            >
+              <Box
+                sx={{
+                  height: '200px',
+                  width: '400px',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                {/* Seasons */}
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>Seasons</FormLabel>
+                  <Box>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="spring"
+                            onChange={(event) => {
+                              changeFishSeason(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Spring"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="summer"
+                            onChange={(event) => {
+                              changeFishSeason(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Summer"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="fall"
+                            onChange={(event) => {
+                              changeFishSeason(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Fall"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="seasonFilter"
+                            defaultChecked
+                            size="small"
+                            value="winter"
+                            onChange={(event) => {
+                              changeFishSeason(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Winter"
+                      />
+                    </FormGroup>
+                  </Box>
+                </Box>
+                {/* Bundles */}
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>Bundles</FormLabel>
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    flexWrap="wrap"
+                    width="225px"
+                    height="175px"
+                  >
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="river-fish-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="River Fish"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="lake-fish-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Lake Fish"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="ocean-fish-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Ocean Fish"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="night-fishing-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Night Fishing"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="crab-pot-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Crab Pot"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="specialty-fish-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Specialty Fish"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="quality-fish-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Quality Fish"
+                    />
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          className="bundleFilter"
+                          size="small"
+                          value="master-fishers-bundle"
+                          onChange={(event) => {
+                            changeFishBundle(event.target.value)
+                          }}
+                        />
+                      }
+                      label="Master Fisher's"
+                    />
+                  </Box>
+                </Box>
               </Box>
             </Container>
 
@@ -142,7 +365,10 @@ const FishInfo = () => {
                                 top: 10,
                                 left: 0,
                               }}
-                              image={`/images/icons/${fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1,fish.weather[0].length)}.png`}
+                              image={`/images/icons/${
+                                fish.weather[0][0].toLowerCase() +
+                                fish.weather[0].slice(1, fish.weather[0].length)
+                              }.png`}
                               alt={fish.weather[0]}
                             />
                           </Tooltip>
@@ -189,7 +415,11 @@ const FishInfo = () => {
                         </Typography>
                         {fish.time.map((time, index) => {
                           return (
-                            <Typography key={index} variant="body2" color="text.secondary">
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              color="text.secondary"
+                            >
                               {time}
                               <br />
                             </Typography>
@@ -404,7 +634,10 @@ const FishInfo = () => {
                                 top: 10,
                                 left: 0,
                               }}
-                              image={`/images/icons/${fish.weather[0][0].toLowerCase() + fish.weather[0].slice(1,fish.weather[0].length)}.png`}
+                              image={`/images/icons/${
+                                fish.weather[0][0].toLowerCase() +
+                                fish.weather[0].slice(1, fish.weather[0].length)
+                              }.png`}
                               alt={fish.weather[0]}
                             />
                           </Tooltip>
@@ -451,7 +684,11 @@ const FishInfo = () => {
                         </Typography>
                         {fish.time.map((time, index) => {
                           return (
-                            <Typography key={index} variant="body2" color="text.secondary">
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              color="text.secondary"
+                            >
                               {time}
                               <br />
                             </Typography>
@@ -589,7 +826,11 @@ const FishInfo = () => {
                         </Typography>
                         {fish.time.map((time, index) => {
                           return (
-                            <Typography key={index} variant="body2" color="text.secondary">
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              color="text.secondary"
+                            >
                               {time}
                               <br />
                             </Typography>
@@ -653,7 +894,8 @@ const FishInfo = () => {
               <br />
               <Typography variant="body1">
                 These fish are caught using a baited crab pot or foraged on the
-                beach, they can all be donated to the Crab Pot Bundle. They are avaliable all year.
+                beach, they can all be donated to the Crab Pot Bundle. They are
+                avaliable all year.
               </Typography>
             </Box>
             <Grid
@@ -696,7 +938,11 @@ const FishInfo = () => {
                         </Typography>
                         {fish.time.map((time, index) => {
                           return (
-                            <Typography key={index} variant="body2" color="text.secondary">
+                            <Typography
+                              key={index}
+                              variant="body2"
+                              color="text.secondary"
+                            >
                               {time}
                               <br />
                             </Typography>
@@ -744,19 +990,23 @@ const FishInfo = () => {
               })}
             </Grid>
           </Box>
-          {Object.keys(displayedFish).length > 0 ? (<Box sx={{ marginTop: '2rem' }}>
-            <BottomNavigation
-              showLabels
-              onChange={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                })
-              }}
-            >
-              <BottomNavigationAction label="Back to top" />
-            </BottomNavigation>
-          </Box>) : <h2>:(</h2>}
+          {Object.keys(displayedFish).length > 0 ? (
+            <Box sx={{ marginTop: '2rem' }}>
+              <BottomNavigation
+                showLabels
+                onChange={() => {
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                  })
+                }}
+              >
+                <BottomNavigationAction label="Back to top" />
+              </BottomNavigation>
+            </Box>
+          ) : (
+            <h2>:(</h2>
+          )}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />
