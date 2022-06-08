@@ -1284,7 +1284,7 @@ const fishingPoleFish = [
     sellPrice: 100,
     bundle: null,
     notes: null,
-    imageUrl: 'Flounder',
+    imageUrl: 'flounder',
   },
   {
     id: 12,
