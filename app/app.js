@@ -50,13 +50,6 @@ const App = () => {
                   </Typography>
                 </MenuItem>
               </Link>
-              {/* <Link className="nav-item" to="/bundles">
-                <MenuItem key="Home">
-                  <Typography textAlign="center">
-                    <p>Bundles</p>
-                  </Typography>
-                </MenuItem>
-              </Link> */}
             </Toolbar>
           </Container>
         </AppBar>
@@ -66,7 +59,6 @@ const App = () => {
             <Route path="/crops" element={<CropsInfo />} />
             <Route path="/villagers" element={<VillagersInfo />} />
             <Route path="/fish" element={<FishInfo />} />
-            {/* <Route path="/bundles" element={<BundlesInfo />} /> */}
           </Routes>
         </main>
       </div>

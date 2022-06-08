@@ -82,7 +82,7 @@ const CropsInfo = () => {
               <Box sx={{ display: 'flex',
                   justifyContent: 'center', gap: '20px 100px',
                   flexWrap: 'wrap'}}>
-                <Box display="flex" flexDirection="column" gap="1rem">
+                <Box display="flex" flexDirection="column" gap="1rem" height='190px'>
                   <FormLabel>Seasons</FormLabel>
                   <Box>
                     <FormGroup>
@@ -132,7 +132,7 @@ const CropsInfo = () => {
                   </Box>
                 </Box>
                 {/* Profession */}
-                <Box display="flex" flexDirection="column" gap="1rem" height='175px'>
+                <Box display="flex" flexDirection="column" gap="1rem" height='150px'>
                   <FormLabel>
                     Profession
                   </FormLabel>
